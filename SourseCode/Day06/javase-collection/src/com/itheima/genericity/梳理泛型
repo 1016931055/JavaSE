@@ -1,0 +1,67 @@
+基础泛型的定义：
+1、泛型类
+2、泛型接口
+3、泛型方法
+
+问题：开发时选择哪个泛型定义？
+第1，先明确要定义的是接口还是类
+     当类中的成员变量，在不确定具体使用哪种类型时，可以使用：泛型 表示类型
+     当接口中方法，在不确定方法参数类型或方法返回值类型时，可以使用：泛型 表示类型
+第2，在编写工具类时，工具类中的方法参数或方法返回值，不确定具体类型， 可以使用： 泛型
+
+
+问题：泛型定义的语法
+//泛型类
+public class 类名<T,E,X,Y>{
+    private T name;
+    private E a;
+    private X n;
+    private Y m;
+
+    public 类名(T name , E a , X n ,Y m){
+    }
+}
+new 类名<String,Integer,Double,Student>();
+
+
+//泛型接口
+public interface 接口名<T,E>{
+}
+
+//泛型方法
+public <T> T 方法名(T 参数名){
+}
+
+
+问题： 怎么明确泛型指定的具体类型（指定泛型上的类型）
+//泛型类： 在创建对象时，指定泛型类型
+类名<String> 对象 = new 类名<>();
+
+
+//泛型接口： 1.在子类实现接口时，明确指定了泛型类型      2.子类继承接口上的泛型（子类变为泛型类）
+interface 接口<T>{
+   public void method(T n);
+   public T get();
+}
+class 子类 implements 接口<Integer>{
+   public void method(Integer n){
+   }
+   public Integer get(){
+   }
+}
+
+class 子类<T> implements 接口<T>{
+   public void method(T n){
+   }
+   public T get(){
+   }
+}
+
+//泛型方法：
+public class 类{
+
+   public <T> T getInstance(T param){
+   }
+
+}
+Student stu = 类对象.getInstance( new Student() )
