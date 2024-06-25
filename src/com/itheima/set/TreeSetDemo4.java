@@ -44,6 +44,5 @@ public class TreeSetDemo4 {
             }
         });
         System.out.println(Arrays.toString(strs));
-
     }
 }
