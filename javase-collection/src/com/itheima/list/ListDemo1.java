@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListDemo1 {
-    //验证List集合的特性
     public static void main(String[] args) {
-        //创建List集合（多态、泛型）
         List<Integer> list = new ArrayList<>();
+        // 添加元素
+        // List.add(索引 / 元素值) 向List集合中指定索引位置上，添加元素
+        list.add(0, 10);
+        list.add(1,50);
+        // 如指定索引位置上已有索引，会自动后向移动
 
-        //添加元素
-        list.add(100);
-        list.add(0,300);
-        list.add(200);
-        list.add(300);//允许存储重复元素
+        //修改元素
+        //List.set(索引 ， 元素值) //修改List集合中指定索引位置上的元素值
+        list.set(0,20);
 
-        System.out.println(list);
+        //删除元素
+        //List.remove(索引) //删除List集合中指定索引位置上的元素值
+        list.remove(0);
 
-        for (int i = 0; i < list.size(); i++) {
-            //根据索引取出集合中的每一个元素
-            Integer num = list.get(i);
-
-            System.out.println(num);
-        }
+        //获取元素
+        //List.get(索引);
+        System.out.println(list.get(0));
     }
 }

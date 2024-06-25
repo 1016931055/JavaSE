@@ -16,12 +16,11 @@ public class HashSetDemo2 {
 
         //遍历集合
         for (Student student : studentSet) {
-            System.out.println(student);
+            System.out.println(student.getAge());
         }
         /*注意：当使用HashSet存储自定义对象时，可能会出现存储了重复内容的对象
-        解决方案： 在自定义类中重写hashCode()和equals方法
+        解决方案： 在自定义类(Student)中重写hashCode()和equals方法
         * */
-
 
     }
 }
