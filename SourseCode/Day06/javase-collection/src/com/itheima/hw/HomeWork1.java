@@ -1,4 +1,4 @@
-package src.com.itheima.hw;
+package com.itheima.hw;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
