@@ -8,6 +8,7 @@ import java.util.List;
 
 public class LoggerDemo1 {
     //创建日志对象
+    // 获取一个Logger对象(使用日志对象记录相关操作)
     public static final Logger LOGGER = LoggerFactory.getLogger("LoggerDemo1");
 
     public static void main(String[] args) {

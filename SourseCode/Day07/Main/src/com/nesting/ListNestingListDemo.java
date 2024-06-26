@@ -1,7 +1,8 @@
-package com.itheima.nesting;
+package nesting;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /*
     使用场景举例：一年级有多个班级，每个班级有多名学生。要求保存每个班级的学生姓名，保存一个年级所有的班级信息
 
@@ -48,14 +49,13 @@ public class ListNestingListDemo {
         grade.add(classes3);
 
 
-        //遍历嵌套集合
-        for (List<String> classes : grade) {
-            //遍历：班级
+        // 遍历嵌套集合(grade.for)
+         for (List<String> classes : grade) {
+            //遍历：班级(classes.fori)
             for (int i = 0; i < classes.size(); i++) {
                 String name = classes.get(i);
                 System.out.println(name);
             }
-
             System.out.println("----------------------------");
         }
 
