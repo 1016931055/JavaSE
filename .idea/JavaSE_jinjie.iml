@@ -5,9 +5,10 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/javase-collection/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/javase-collection/src_t" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day07/Main/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day07/javase-collection/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day07/javase-log/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day07/javase-log/src" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day08/javase-exception/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day08/javase_day08/javase_exception/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

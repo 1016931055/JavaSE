@@ -26,7 +26,7 @@ public class ExceptionDemo1 {
 
             date = sdf.parse(strDate);//当前行代码存在：编译时异常
 
-        }catch (ParseException e){
+        }catch (ParseException e) {
             System.out.println("处理异常......");
         }
         return date;

@@ -8,6 +8,7 @@ public class ExceptionDemo1 {
 
         //调用方法
 //        printArray(arr);
+        showArray2(arr);
 
         try{
             showArray(arr);
@@ -24,7 +25,7 @@ public class ExceptionDemo1 {
     public static void showArray(int[] array) throws RuntimeException {
         //验证传递的参数是否合法
         if(array == null || array.length==0){
-           throw  new RuntimeException("传递的参数为空!");
+           throw  new RuntimeException("showArray1_传递的参数为空!");
         }
 
         for (int i : array) {
@@ -34,7 +35,7 @@ public class ExceptionDemo1 {
     public static void showArray2(int[] array) {
         //验证传递的参数是否合法
         if(array == null || array.length==0){
-            throw  new RuntimeException("传递的参数为空!");
+            throw  new RuntimeException("showArray2_传递的参数为空!");
         }
 
         for (int i : array) {

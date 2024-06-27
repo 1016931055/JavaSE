@@ -24,9 +24,5 @@ public class LoggerDemo1 {
             LOGGER.warn("调用method方法时，传递的name参数为空");
             return;
         }
-
-
-
-
     }
 }

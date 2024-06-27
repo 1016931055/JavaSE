@@ -21,7 +21,9 @@ public class ExceptionDemo1 {
             LOGGER.warn(e.toString());
 
             System.out.println("=============================================");
-            e.printStackTrace();//打印异常信息到控制台
+
+            // *** 打印异常信息到控制台！！
+            e.printStackTrace();
         }
 
         System.out.println("程序执行执行.....");
