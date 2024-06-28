@@ -41,13 +41,47 @@ TreeSet是具有排序特性的，默认按照自然排序。如果自然排序�
 答案：
 
 ```java
+public static void Test1(){
+        Random r = new Random();
 
+        TreeSet<Integer> tSet = new TreeSet<>();
+        for (int i = 0; i < 10; i++) {
+            tSet.add(r.nextInt(51));
+        }
+
+        for (Integer i :tSet) {
+            System.out.print(i+ " ");
+        }
+        System.out.println();
+
+
+        //使用内部类方法创建新排序规则的Set
+        //默认的是o1 - o2，想要降序排列就 compare方法中返回 o1 - o2
+        TreeSet<Integer> tSet2 = new TreeSet<> (new Comparator<Integer>(){
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        }
+        );
+
+        //添加元素
+        for (int i = 0; i < 10; i++) {
+            tSet2.add(r.nextInt(51) + 50);
+        }
+
+        for (Integer i :tSet2) {
+            System.out.print(i+ " ");
+        }
+        System.out.println();
+    }
 ```
 
 打印结果：
 
 ```
-
+0 6 17 26 31 33 35 45 49 50 
+99 86 84 80 77 76 72 56 
 ```
 
 
@@ -72,13 +106,55 @@ TreeSet是具有排序特性的，默认按照自然排序。如果自然排序�
 答案：
 
 ```java
+    public static  void Test2(){
+        List<Integer> list = new ArrayList<>();
 
+        //0-100的随机整数
+        Random r = new Random();
+
+        for (int i = 0; i < 10; i++) {
+            list.add(r.nextInt(101));
+        }
+        System.out.print("初始数据为: ");
+
+        // 打印数组数据
+        for (int i : list) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        // 打乱数组顺序
+        Collections.shuffle(list);
+        // 打印数组数据
+        for (int i : list) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        // 升序排序数组
+        Collections.sort(list);
+        // 打印数组数据
+        for (int i : list) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        // 反转数组
+        Collections.reverse(list);
+        // 打印数组数据
+        for (int i : list) {
+            System.out.print(i + " ");
+        }
+    }
 ```
 
 打印结果：
 
 ```java
-
+初始数据为: 86 89 26 5 48 68 58 86 96 83 
+96 86 89 58 5 68 48 26 83 86 
+5 26 48 58 68 83 86 86 89 96 
+96 89 86 86 83 68 58 48 26 5 
 ```
 
 
@@ -103,7 +179,21 @@ TreeSet是具有排序特性的，默认按照自然排序。如果自然排序�
 答案：
 
 ```java
+   private static void Test3() {
+        int[] arr = {1,2,432,32,54,32,3,7,657,563,25,43,6,463,52};
+        System.out.println(Arrays.toString(arr));
 
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
 ```
 
 
@@ -124,7 +214,22 @@ TreeSet是具有排序特性的，默认按照自然排序。如果自然排序�
 答案：
 
 ```java
+   private static void Test4() {
+        int[] arr = {7, 6, 5, 4, 3};
+        System.out.println(Arrays.toString(arr));
 
+        // 选择排序
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if(arr[i] > arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
 ```
 
 
@@ -152,7 +257,40 @@ TreeSet是具有排序特性的，默认按照自然排序。如果自然排序�
 答案：
 
 ```java
+private static void Test5() {
+        HashMap<Integer,String> map = new HashMap<>();
 
+        map.put(4,"张三");
+        map.put(5,"李四");
+        map.put(6,"王五");
+
+        System.out.println("集合大小为：" + map.size());
+
+        // 使用“键找值”的方式遍历集合，打印键和值；(keySet)
+        // 获取键的set集合(无序，无索引，无重复)
+        Set<Integer> keySet = map.keySet();
+        for (Integer i : keySet){
+            System.out.print(i +" " + map.get(i)+ "; ");
+        }
+        System.out.println();
+
+        //使用“键值对”的方式遍历集合，打印键和值；(entrySet)
+        // 由Map.Entry组成的Set集合
+        for (Map.Entry<Integer,String> entry : map.entrySet()){
+            System.out.print(entry.getKey() +" " + entry.getValue()+ "; ");
+        }
+        System.out.println();
+
+        // 判断集合中是否有键：10（containsKey）
+        System.out.println(map.containsKey(10));
+
+        // 删除键为4的键值对，删除完毕打印集合
+        map.remove(4);
+        for (Map.Entry entry: map.entrySet()){
+            System.out.print(entry.getKey() +" " + entry.getValue()+ "; ");
+        }
+        System.out.println();
+    }
 ```
 
 
@@ -178,13 +316,27 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 答案：
 
 ```java
+ private static void Test6() {
+        String str = "fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew";
+        TreeMap<Character,Integer> map = new TreeMap<>();
 
+        for (int i = 0; i < str.length(); i++){
+            if (!map.containsKey(str.charAt(i)))
+                map.put(str.charAt(i),1);
+            else map.put(str.charAt(i),map.get(str.charAt(i)) + 1);
+        }
+
+        for (Map.Entry entry : map.entrySet()){
+            System.out.print(entry.getKey() +":" + entry.getValue()+ "; ");
+        }
+        System.out.println();
+    }
 ```
 
 打印结果：
 
 ```
-
+2:1; A:2; D:1; E:2; F:5; Q:1; a:1; e:4; f:4; j:4; k:1; o:1; w:2; 他:2; 你:2; 我:2; 
 ```
 
 
@@ -201,7 +353,20 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 答案：
 
 ```java
+ private static void Test7() {
+        HashMap<String, Integer> employee = new HashMap<>();
+        employee.put("柳岩",2100);
+        employee.put("张亮",1700);
+        employee.put("诸葛亮",1800);
+        employee.put("灭绝师太",2600);
+        employee.put("东方不败",3800);
 
+        employee.put("柳岩", employee.get("柳岩") + 300);
+
+        for(Map.Entry entry : employee.entrySet()){
+            System.out.println(entry.getKey() + "工资为"+entry.getValue());
+        }
+    }
 ```
 
 
@@ -209,7 +374,11 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 打印结果：
 
 ```
-
+灭绝师太工资为2600
+张亮工资为1700
+诸葛亮工资为1800
+柳岩工资为2400
+东方不败工资为3800
 ```
 
 
@@ -242,6 +411,76 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 答案：
 
 ```java
+public class Student06 {
+    private int num;
+    private String name;
+
+    private int score;
+
+    public Student06(int num, String name, int score) {
+        this.num = num;
+        this.name = name;
+        this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "Student06{" +
+                "num=" + num +
+                ", name='" + name + '\'' +
+                ", score=" + score +
+                '}';
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(num);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student06 student06 = (Student06) o;
+        return num == student06.num;
+    }
+}
+  
+private static void  Test8(){
+        // Student06 - 学号、姓名和成绩
+        LinkedHashMap<Student06, String> map = new LinkedHashMap<>();
+        map.put(new Student06(12,"张三",80),"北京");
+        map.put(new Student06(12,"李四",90),"上海");
+        map.put(new Student06(17,"王五",100),"武汉");
+        for(Map.Entry entry : map.entrySet()){
+            System.out.println(entry.getKey());
+        }
+    }
+
 
 ```
 
@@ -252,7 +491,8 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 张三和李四的学号一样，不能重复存储
 
 ```
-
+Student06{num=12, name='张三', score=80}
+Student06{num=17, name='王五', score=100}
 ```
 
 
@@ -272,7 +512,20 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 答案：
 
 ```java
+    private static void Test6(String str) {
+        TreeMap<Character,Integer> map = new TreeMap<>();
 
+        for (int i = 0; i < str.length(); i++){
+            if (!map.containsKey(str.charAt(i)))
+                map.put(str.charAt(i),1);
+            else map.put(str.charAt(i),map.get(str.charAt(i)) + 1);
+        }
+
+        for (Map.Entry entry : map.entrySet()){
+            System.out.print(entry.getKey() +":" + entry.getValue()+ "; ");
+        }
+        System.out.println();
+    }
 ```
 
 
@@ -306,7 +559,36 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 答案：
 
 ```java
+private static void Test10() {
+        // 创建年级
+        List<List<Student06>> grade = new ArrayList<>();
 
+        // 创建班级
+        List<Student06> class1 = new ArrayList<>();
+        List<Student06> class2 = new ArrayList<>();
+
+        // 添加学生
+        class1.add(new Student06(12,"张三",80));
+        class1.add(new Student06(12,"李四",90));
+        class1.add(new Student06(17,"王五",100));
+
+        class2.add(new Student06(12,"赵六",80));
+        class2.add(new Student06(12,"孙七",90));
+        class2.add(new Student06(17,"周八",100));
+
+        // 添加班级
+        grade.add(class1);
+        grade.add(class2);
+
+        // 遍历年级类
+        for (List<Student06> iclass : grade){
+            // class_list
+            for (Student06 stu : iclass){
+                System.out.println(stu);
+            }
+            System.out.println();
+        }
+    }
 ```
 
 
@@ -314,6 +596,12 @@ String str = “fje你kw我FDQFj你feAF他Eajf他eo2FA我FEjfew”;
 打印结果：
 
 ```java
+Student06{num=12, name='张三', score=80}
+Student06{num=12, name='李四', score=90}
+Student06{num=17, name='王五', score=100}
 
+Student06{num=12, name='赵六', score=80}
+Student06{num=12, name='孙七', score=90}
+Student06{num=17, name='周八', score=100}
 ```
 

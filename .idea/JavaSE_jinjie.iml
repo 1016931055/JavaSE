@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day07/javase-log/src" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day08/javase-exception/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day08/javase_day08/javase_exception/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day05/作业/作业-代码题" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day06/作业/作业-代码题" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

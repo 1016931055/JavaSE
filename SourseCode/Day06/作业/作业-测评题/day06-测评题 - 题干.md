@@ -2,7 +2,7 @@
 
 ### 题目1(多选):
 
-**下列关于TreeSet集合排序的原理正确的是 (  )**
+**下列关于TreeSet集合排序的原理正确的是 ( ABC )**
 
 #### 选项 :
 
@@ -18,7 +18,7 @@
 
 ### 题目2(多选):
 
-**下列属于Collections工具类中的方法有 ( )**
+**下列属于Collections工具类中的方法有 ( ACD)**
 
 #### 选项 :
 
@@ -34,7 +34,7 @@
 
 ### 题目3(单选):
 
-**下列关于可变参数说法错误的是(  )**
+**下列关于可变参数说法错误的是( D )**
 
 #### 选项 :
 
@@ -50,7 +50,7 @@
 
 ### 题目4(单选):
 
-**补全下列冒泡排序的代码,选出最合理的选项（  ) **
+**补全下列冒泡排序的代码,选出最合理的选项 (C)  **
 
 ```java
 package com.itheima.arraysort_demo.bubblesort_demo;
@@ -67,9 +67,9 @@ public class SortDemo {
     public static void main(String[] args) {
         int[] arr = {3, 5, 2, 1, 4};
 
-        for (int j = 0; __位置1__ ; j++) {
-            for (int i = 0; __位置2__ ; i++) {
-                if (__位置3__) {
+        for (int j = 0; __位置1__ arr.length()-1; j++) {
+            for (int i = 0; __位置2__ arr.lengyh()-1-j ; i++) {
+                if (__位置3__arr[i] > arr[i+1]) {
                     int temp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = temp;
@@ -95,7 +95,7 @@ public class SortDemo {
 
 ### 题目5(单选):
 
-**补全下列二分查找的代码,选出最合理的选项 (  )**
+**补全下列二分查找的代码,选出最合理的选项 ( C )**
 
 ```java
 public class BinarySearchDemo {
@@ -114,11 +114,11 @@ public class BinarySearchDemo {
             int mid = (min + max) / 2;
             
             if (arr[mid] == num) {
-               	__位置1__
+               	__位置1__ return mid
             } else if (arr[mid] > num) {
-                __位置2__
+                __位置2__ max = mid-1;
             } else if (arr[mid] < num) {
-                __位置3__
+                __位置3__ min = mid + 1;
             }
         }
         return -1;
@@ -140,7 +140,7 @@ public class BinarySearchDemo {
 
 ### 题目6(多选):
 
-**下列对于Map集合的特点说法正确的是 ( )**
+**下列对于Map集合的特点说法正确的是 ( BC)**
 
 #### 选项 :
 
@@ -156,7 +156,7 @@ public class BinarySearchDemo {
 
 ### 题目7(单选):
 
-**下列关于Map集合遍历的方式说法正确的是(  )**
+**下列关于Map集合遍历的方式说法正确的是( A )**
 
 #### 选项 :
 
@@ -172,7 +172,7 @@ public class BinarySearchDemo {
 
 ### 题目8(多选):
 
-**下列对于Map集合方法描述正确的是(  )**
+**下列对于Map集合方法描述正确的是( BCD )**
 
 #### 选项 :
 
@@ -188,7 +188,7 @@ public class BinarySearchDemo {
 
 ### 题目9(单选):
 
-**下列关于Map集合的实现类数据结构说法正确的是(  )**
+**下列关于Map集合的实现类数据结构说法正确的是( D )**
 
 #### 选项 :
 
@@ -204,7 +204,7 @@ public class BinarySearchDemo {
 
 ### 题目10(单选):
 
-**下列关于HashMap保证键唯一需要依赖于什么(  )**
+**下列关于HashMap保证键唯一需要依赖于什么( A )**
 
 #### 选项 :
 

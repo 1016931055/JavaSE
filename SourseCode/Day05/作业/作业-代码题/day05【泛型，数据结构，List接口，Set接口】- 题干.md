@@ -104,25 +104,26 @@ public class Test1{
 请写出你所知道的数据结构，至少5种。
 
 ```java
-
+栈,队列,数组,集合,链表,二叉树,哈希表
 ```
 
 写出栈结构、队列结构的特点
 
 ```
-
+栈:先进后出；队列：先进先出
 ```
 
 请写出数组结构的特点；
 
 ```
-
+查询快，增删慢
 ```
 
 请写出链表结构的特点
 
 ```
-
+查询慢，增删快
+（Linked List）无索引，无序，由一连串节点(Node)组成,节点通过指针连接，有addFirst/addLast方法
 ```
 
 
@@ -147,16 +148,46 @@ public class Test1{
 答案：
 
 ```java
+public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
 
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        System.out.println("普通For循环遍历：");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+
+        System.out.println("增强For循环遍历：");
+        for (Integer i : list){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        System.out.println("迭代器遍历:");
+        Iterator<Integer> it = list.iterator();
+        while (it.hasNext()) {
+            Integer next =  it.next();
+            System.out.print(next + " ");
+        }
+    }
 ```
 
 结果：
 
-```java
-
+```latex
+普通For循环遍历：
+1 2 3 4 5 
+增强For循环遍历：
+1 2 3 4 5 
+迭代器遍历:
+1 2 3 4 5 
 ```
-
-
 
 ## 题目4
 
@@ -165,6 +196,16 @@ public class Test1{
 
 
 答案：
+
+```java
+ public static int listTest(ArrayList<Integer> list, Integer num){
+        for ( int i = 0; i < list.size(); i++) {
+            if (num.equals(list.get(i)))
+                return i;
+        }
+        return -1;
+    }
+```
 
 思路：
 
@@ -201,7 +242,27 @@ public class Test1{
 答案：
 
 ```java
+// 创建3个Student对象
+        Student stu1 = new Student("SZL1",12,"Male");
+        Student stu2 = new Student("SZL2",15,"Male");
+        Student stu3 = new Student("SZL3",23,"Male");
 
+        ArrayList<Student> stuList = new ArrayList<>();
+        stuList.add(stu1);
+        stuList.add(stu2);
+        stuList.add(stu3);
+
+        int maxAge = stu1.getAge();
+        Student changedStudent = stu1;
+
+        for (Student student : stuList){
+            if (student.getAge() > maxAge) {
+                maxAge = student.getAge();
+                changedStudent = student;
+            }
+        }
+        changedStudent.setName("SLW");
+        System.out.println(changedStudent);
 ```
 
 
@@ -232,7 +293,22 @@ public class Test1{
 思路：Set集合具有去重效果
 
 ```java
+Set<String> set = new HashSet<>();
+        set.add("刘备");
+        set.add("刘备");
+        set.add("关羽");
+        set.add("张飞");
+        set.add("关羽");
 
+        System.out.println("Set的大小为:"+set.size());
+
+        //迭代器遍历
+        Iterator<String> it = set.iterator();
+        while (it.hasNext()) {
+            String next =  it.next();
+            System.out.print(next + " ");
+        }
+        System.out.println();
 ```
 
 打印结果
@@ -270,7 +346,33 @@ public class Test1{
 思路：自定义对象保存到HashSet集合中，需要重写equals和hashCode方法
 
 ```java
+Student s1 = new Student("张三",20,"男");
+        Student s2 = new Student("李四",21,"女");
+        Student s3 = new Student("张三",20,"男");
 
+        Set<Student> set2 = new HashSet<>();
+        set2.add(s1);
+        set2.add(s2);
+        set2.add(s3);
+
+        for (Student s : set2) {
+            System.out.println(s);
+        }
+
+Student类中：
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name) && Objects.equals(sex, student.sex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, sex);
+    }
+}
 ```
 
 
@@ -299,7 +401,18 @@ public class Test1{
 代码：
 
 ```java
+        // 创建LinkedHashSet集合
+        LinkedHashSet<Integer> lSet = new LinkedHashSet<>();
+        // 添加元素
+        lSet.add(20);
+        lSet.add(30);
+        lSet.add(50);
+        lSet.add(10);
+        lSet.add(30);
+        lSet.add(20);
+        System.out.println(lSet.size()); // 4
 
+        lSet.stream().filter(num -> num>25).sorted().forEach(System.out::println);
 ```
 
 
@@ -307,7 +420,7 @@ public class Test1{
 为什么打印集合数量跟存入的数量不一致？
 
 ```java
-
+底层是哈希表结构+链表结构 , 哈希表保证元素唯一 , 链表保证元素顺序
 ```
 
 
