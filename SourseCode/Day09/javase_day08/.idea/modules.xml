@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/javase_exception/javase_exception.iml" filepath="$PROJECT_DIR$/javase_exception/javase_exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_lambda/javase_lambda.iml" filepath="$PROJECT_DIR$/javase_lambda/javase_lambda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_stream/javase_stream.iml" filepath="$PROJECT_DIR$/javase_stream/javase_stream.iml" />
+    </modules>
+  </component>
+</project>

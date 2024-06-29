@@ -12,6 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day05/作业/作业-代码题" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day06/作业/作业-代码题" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day08/javase-exception/src_t" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SourseCode/Day09/javase_thread/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
