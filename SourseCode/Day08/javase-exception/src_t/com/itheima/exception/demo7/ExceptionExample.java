@@ -15,9 +15,7 @@ public class ExceptionExample {
         long day = 0;
 
         try {
-
             day = getDay(birthday);
-
         } catch (ParseException e1) {
             System.out.println("您输入的生日"+e1.getMessage()+"格式不匹配");
             e1.printStackTrace();

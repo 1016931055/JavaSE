@@ -1,7 +1,7 @@
 package com.itheima.ex;
 
 //自定义异常类
-public class AgeOutOfBoundsException extends RuntimeException{
+public class AgeOutOfBoundsException extends RuntimeException {
     public AgeOutOfBoundsException() {
     }
 
